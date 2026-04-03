@@ -36,10 +36,19 @@
 - [ ] Package companion agent skills that know how to target this coordinator for docs sweeps, e2e serialization, and submodule bump flows.
 - [ ] Bundle those skills into a Codex plugin milestone that can ship the coordinator MCP plus the future MCP App surface together.
 - [ ] Bundle those skills into a Claude Code plugin milestone with matching discovery and operator guidance.
+- [ ] Add Codex plugin bundle structure that keeps plugin-root `skills/`, `.mcp.json`, and marketplace metadata separate from the raw service package.
+- [ ] Add Claude Code plugin bundle structure that keeps `.claude-plugin/plugin.json`, plugin-root `skills/`, and plugin-root `.mcp.json` aligned with Claude's plugin expectations.
 - [ ] Add docs that explain when to use the raw MCP, the future app surface, and the plugin-wrapped workflows.
 
-## Milestone 6: Umbrella Monorepo Integration
+## Milestone 6: Subagent And Agent Management
+
+- [ ] Add a Codex-focused milestone for managing subagent configuration layers, role prompts, and future repo-scoped distribution of coordinator-aware agent configs.
+- [ ] Add a Claude Code subagent milestone for `.claude/agents` and future plugin-bundled agent definitions that know how to use this coordinator safely.
+- [ ] Document how agent and subagent configs should depend on the coordinator without duplicating workflow instructions already owned by skills or the MCP surface.
+
+## Milestone 7: Umbrella Monorepo Integration
 
 - [ ] Add this repository to the `speak-to-user` umbrella monorepo as a pinned submodule once the target top-level path is chosen.
 - [ ] Update the umbrella README and roadmap to distinguish the real vendored coordinator repo from later plugin and app milestones.
+- [ ] Document `mcps/` as the home for vendored MCP service repositories while future interactive app surfaces continue to live under `apps/`.
 - [ ] Add a narrow pin-bump workflow for future releases of this repository in the umbrella monorepo.

@@ -30,6 +30,8 @@ This service exists to give those tasks one local coordination point before a he
 
 That last point matters. New layers are easy to overcomplicate, so this repo starts with the smallest useful coordinator surface first and leaves actual executor, agent, and plugin integration for explicit milestones.
 
+This standalone repository is also intended to be the source-of-truth development home even after the umbrella `speak-to-user` monorepo vendors it under `mcps/speak-to-user-dev`. The monorepo copy should stay an integration submodule, while feature development, releases, and first-pass verification continue to happen here.
+
 ## Setup
 
 Install the project dependencies:
@@ -98,6 +100,8 @@ The initial lane set is:
 
 Future milestones cover executor integration, queue persistence, repo-aware guardrails, an OpenAI/FastMCP App surface, and bundled skills plus Codex and Claude Code plugins.
 
+When those plugin bundles arrive, they should live as dedicated plugin roots inside this repository so each plugin can keep its own expected `skills/`, `.mcp.json`, and manifest structure without warping the core service layout.
+
 ## Verification
 
 Run the baseline checks before committing:
@@ -116,6 +120,7 @@ The first roadmap pass in [ROADMAP.md](/Users/galew/Workspace/speak-to-user-dev/
 - umbrella-monorepo submodule and docs workflows
 - an OpenAI/FastMCP App surface for the coordinator
 - bundled agent skills plus Codex and Claude Code plugin distribution
+- Codex multi-agent and Claude Code subagent configuration management
 
 ## License
 
